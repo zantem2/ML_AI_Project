@@ -25,7 +25,7 @@ The training data is made up of a subset of daily trade information from 1st Mar
 The data has a typical split of 75/25 for the train/test split
 
 Data Preprocessing
-The date field was removed due to parsing error.
+The date, close and change fields were removed as the model is predicting the output.
 The code for the output was run (located at X) and a csv called out.csv was generated
 
 ## Performance

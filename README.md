@@ -46,7 +46,7 @@ Description of which hyperparameters you have and how you chose to optimise them
 Within a random forest there are the following hyper parameters
 *n_estimators
 *Max_features
-??max_depth
+*max_depth
 max_leaf_nodes
 *max_sample
 min_sample_split
