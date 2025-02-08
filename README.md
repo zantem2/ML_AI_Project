@@ -2,8 +2,7 @@
 # Stock Market Prediction on a strategy
 
 
-## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
-100 words to explain what your project is about to a general audience. 
+## NON-TECHNICAL EXPLANATION
 The project is to determine when to enter/exit a trade based on a trailing stop strategy
 A trailing stop is defined by gradually moving a stop-loss up to protect gained profits. [https://www.investopedia.com/articles/trading/08/trailing-stop-loss.asp]
 
@@ -44,23 +43,48 @@ The chosen model type is a random forest since this is a classification problem.
 ## HYPERPARAMETER OPTIMSATION
 Description of which hyperparameters you have and how you chose to optimise them. 
 Within a random forest there are the following hyper parameters
-*n_estimators
-*Max_features
-*max_depth
-max_leaf_nodes
-*max_sample
-min_sample_split
 
-These parameters with * are going to be optimised using Bayesian Optimisation. See model notebook for the implementation
+{'bootstrap',
+ 'ccp_alpha',
+ 'class_weight',
+ 'criterion',
+ 'max_depth',
+ 'max_features',
+ 'max_leaf_nodes',
+ 'max_samples',
+ 'min_impurity_decrease',
+ 'min_impurity_split',
+ 'min_samples_leaf',
+ 'min_samples_split',
+ 'min_weight_fraction_leaf',
+ 'n_estimators',
+ 'n_jobs',
+ 'oob_score',
+ 'random_state',
+ 'verbose',
+ 'warm_start'}
+ 
+I will be optimising the following since they have significant impact
+criterion
+max_samples
+max_depth
+max_features
+n_estimators
+
+See model notebook for the implementation. Criterion is categorical which requires special attention.
 
 ## RESULTS
-A summary of your results and what you can learn from your model 
+
+The biggest difference was how much difference Bayesian Optimisation on the hyperparameters made to the complexity of the tree. Through my own devised way of mixing categorical hyperparameters the resulting tree is much simpler. A max depth of 5 vs default values of 7 across multiple trees. The final tree is below, the details are in the 'random forest' notebook.
 
 You can include images of plots using the code below:
 ![Screenshot](image.png)
 
+What this is showing is that the strategy can be implemented and predicted over time.
+
 ## FURTHER TIME
 Given more time on the project I would do next:-
+- Explore the hybrid approach to BO and see how this could be applied to more models. Also improve the underlying code to be more efficient and see if Optuna / Turbo methodologies can be incorporated.
 - Expand the trading model to have variable margin for the BUY/SELL decisions
 - Determine if Elliot Wave Theory can be incorporated [https://www.investopedia.com/articles/active-trading/010715/how-trade-breakouts-using-elliott-wave-theory.asp]
 - Expand the source data to individual stocks rather than just SPY

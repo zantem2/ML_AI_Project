@@ -14,6 +14,7 @@ The technical information does not contain personal information. The expanded co
 The data was acquired from Barchart. Sign up for an account and download CSV data for SPY.
 The data is available to be extracted at a more detailed time frame e.g. per hour but daily time period was used to keep size requirements low.
 The data was collected as one click, there is the ability to download data.
+
 ## Preprocessing/cleaning/labelling
 
 The original data contained information from 08/01/2020 it was truncated to 1/3/2022 to 1/7/2024. The reason is due to how technical indicators operate, there was missing data (e.g. a 200D average needs 200 price entries). Data after 1/7/2004 was truncated to avoid crashes as defined at [https://en.wikipedia.org/wiki/List_of_stock_market_crashes_and_bear_markets]
@@ -35,6 +36,7 @@ The data is used under license [https://www.barchart.com/terms]
         You may use Barchart Content offered for downloading, such as daily data files, for personal use only and subject to the rules, if any, that accompany           that particular Content.
 Hence the use is personal, non-commercial in nature (using to train a model for personal use and coursework submission) and not sharing the data.
 This is why you are directed to download the dataset yourself to be compliant.
+
 ## Maintenance
 
 The dataset is not subject to maintenance through personal use.
