@@ -77,14 +77,21 @@ See model notebook for the implementation. Criterion is categorical which requir
 
 The biggest difference was how much difference Bayesian Optimisation on the hyperparameters made to the complexity of the tree. Through my own devised way of mixing categorical hyperparameters the resulting tree is much simpler. A max depth of 5 vs default values of 7 across multiple trees. The final tree is below, the details are in the 'random forest' notebook.
 
-You can include images of plots using the code below:
-![Screenshot](image.png)
+The classification report is here- 
+![Screenshot](./final_classification.jpg)
 
-What this is showing is that the strategy can be implemented and predicted over time.
+The confusion matrix is here-
+![Screenshot](./final_cm.jpg)
+
+The resulting tree is here-
+![Screenshot](./final_random.jpg)
+
+This is showing a tree that is broader and less fit to the training data. Given more time I would investigate the optimisation further and look to retry with say hourly data.
 
 ## FURTHER TIME
 Given more time on the project I would do next:-
 - Explore the hybrid approach to BO and see how this could be applied to more models. Also improve the underlying code to be more efficient and see if Optuna / Turbo methodologies can be incorporated.
+- Investigate performance on a larger dataset. For instance hourly data.
 - Expand the trading model to have variable margin for the BUY/SELL decisions
 - Determine if Elliot Wave Theory can be incorporated [https://www.investopedia.com/articles/active-trading/010715/how-trade-breakouts-using-elliott-wave-theory.asp]
 - Expand the source data to individual stocks rather than just SPY
